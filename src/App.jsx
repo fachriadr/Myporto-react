@@ -2,6 +2,7 @@ import DataImage from './data';
 import { listTools, listProyek } from './data';
 
 function App() {
+  const cvPath = '/assets/CV_Fachri Adryansyah.pdf';
   return (
     <>
       <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grip-cols-1">
