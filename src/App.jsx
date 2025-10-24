@@ -1,7 +1,6 @@
 import DataImage from './data';
 import { listTools, listProyek } from './data';
 
- const cvPath = '/assets/CV_Fachri Adryansyah.pdf';
 function App() {
   return (
     <>
@@ -18,7 +17,7 @@ function App() {
             setiap pengalaman menawarkan pelajaran berharga, dan saya bersemangat untuk terus berkembang dalam tim yang progresif.
           </p>
           <div className="flex items-center sm:gap-4 gap-2">
-            <a href={cvPath} download="CV_Fachri Adryansyah.pdf" className="bg violet-700 p-4 rounded-2xl hover:bg-violet-600">
+            <a href="/assets/CV_Fachri Adryansyah.pdf" download="CV_Fachri Adryansyah.pdf" className="bg violet-700 p-4 rounded-2xl hover:bg-violet-600">
               Download CV <i className="ri-download-line ri-lg"></i>
             </a>
             <a href="#proyek" className="bg zinc-700 p-4 rounded-2xl hover:bg-zinc-600">
