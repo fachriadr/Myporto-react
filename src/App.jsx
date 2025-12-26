@@ -16,10 +16,14 @@ function App() {
             komunikatif, serta mampu berkembang di berbagai lingkungan. Saya aktif mengikuti perkembangan teknologi dan terbuka untuk mengeksplorasi berbagai peluang kerja, terutama di bidang TI dan administrasi digital. Saya percaya bahwa
             setiap pengalaman menawarkan pelajaran berharga, dan saya bersemangat untuk terus berkembang dalam tim yang progresif.
           </p>
-          <div className="flex items-center sm:gap-4 gap-2">
-            <a href={`${process.env.PUBLIC_URL}/CV.pdf`} download="CV_Fachri Adryansyah.pdf" className="bg violet-700 p-4 rounded-2xl hover:bg-violet-600">
-              Download CV <i className="ri-download-line ri-lg"></i>
-            </a>
+          const handleDownload = () => {
+            const link = document.createElement('class');
+            link.href = '/CV.pdf';
+            link.setAttribute('download', 'CV.pdf');
+            document.body.appendChild(link) ;
+            link.click();
+            link.parentNode.removeChild(link) ;
+          };
             <a href="#proyek" className="bg zinc-700 p-4 rounded-2xl hover:bg-zinc-600">
               Lihat Proyek <i className="ri-arrow-down-wide-line ri-lg"></i>
             </a>
