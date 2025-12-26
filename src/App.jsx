@@ -21,7 +21,7 @@ function App() {
             komunikatif, serta mampu berkembang di berbagai lingkungan. Saya aktif mengikuti perkembangan teknologi dan terbuka untuk mengeksplorasi berbagai peluang kerja, terutama di bidang TI dan administrasi digital. Saya percaya bahwa
             setiap pengalaman menawarkan pelajaran berharga, dan saya bersemangat untuk terus berkembang dalam tim yang progresif.
           </p>
-          <a id="download-pdf" onClick="handleDownload()">download PDF </a>
+          <a id="download-pdf" onClick={handleDownload}>download PDF </a>
           
             <a href="#proyek" className="bg zinc-700 p-4 rounded-2xl hover:bg-zinc-600">
               Lihat Proyek <i className="ri-arrow-down-wide-line ri-lg"></i>
