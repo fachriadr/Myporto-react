@@ -2,11 +2,16 @@ import DataImage from './data';
 import { listTools, listProyek } from './data';
 
 function App() {
+  // Fungsi download yang BENAR ✅
   const handleDownload = () => {
-            const link = document.getElementById('download-pdf');
-            link.href = "CV.pdf";
-            link.setAttribute('download', 'CV.pdf');
-          };
+    const link = document.createElement('a');
+    link.href = '/Myporto-react/CV.pdf'; // Path untuk GitHub Pages
+    link.download = 'Fachri_Adryansyah_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grip-cols-1">
@@ -21,9 +26,17 @@ function App() {
             komunikatif, serta mampu berkembang di berbagai lingkungan. Saya aktif mengikuti perkembangan teknologi dan terbuka untuk mengeksplorasi berbagai peluang kerja, terutama di bidang TI dan administrasi digital. Saya percaya bahwa
             setiap pengalaman menawarkan pelajaran berharga, dan saya bersemangat untuk terus berkembang dalam tim yang progresif.
           </p>
-          <a id="download-pdf" onClick={handleDownload}>download PDF </a>
           
-            <a href="#proyek" className="bg zinc-700 p-4 rounded-2xl hover:bg-zinc-600">
+          {/* TOMBOL DOWNLOAD - DIPERBAIKI ✅ */}
+          <div className="flex gap-4">
+            <button 
+              onClick={handleDownload}
+              className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600 cursor-pointer"
+            >
+              Download CV <i className="ri-download-line"></i>
+            </button>
+            
+            <a href="#proyek" className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600">
               Lihat Proyek <i className="ri-arrow-down-wide-line ri-lg"></i>
             </a>
           </div>
@@ -33,9 +46,9 @@ function App() {
 
       {/* Tentang */}
       <div className="tentang mt-32 py-10" id="tentang">
-        <div className="xl:w2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-800 rouded-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-          <img src={DataImage.HeroImage} alt="Image" className="w-12 rounde-md mb-10 sm:hidden" loading="lazy" />
-          <p className="text-base /loose mb-10 text-justify">
+        <div className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-800 rounded-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+          <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md mb-10 sm:hidden" loading="lazy" />
+          <p className="text-base/loose mb-10 text-justify">
             Hi, Perkenalkan saya Fachri Adryansyah, seorang Fullstack Developer dan IT Support. Saya memiliki latar belakang Teknologi Informasi, dilengkapi dengan beragam pengalaman kerja di bidang TI Support, Usher, dan Warehouse.
             Kombinasi ini telah membentuk saya menjadi individu yang adaptif dan komunikatif, serta mampu berkembang di berbagai lingkungan. Saya aktif mengikuti perkembangan teknologi dan terbuka untuk mengeksplorasi berbagai peluang
             kerja, terutama di bidang TI dan administrasi digital. Saya percaya bahwa setiap pengalaman menawarkan pelajaran berharga, dan saya bersemangat untuk terus berkembang dalam tim yang progresif.
@@ -60,15 +73,15 @@ function App() {
         </div>
 
         <div className="tools mt-32">
-          <h1 className="text-4xl.snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+          <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             Tools yang dipakai
           </h1>
-          <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base /loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
+          <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
             berikut ini beberapa tools yang saya pakai untuk website
           </p>
           <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
             {listTools.map((tool) => (
-              <div className="flex items-center gap-2 p-3 border-zinc-600 rounded-md hover:bg-zinc-800 group" key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true">
+              <div className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 group" key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true">
                 <img src={tool.gambar} alt="Tools Image" className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900" loading="lazy" />
                 <div>
                   <h4>{tool.nama}</h4>
